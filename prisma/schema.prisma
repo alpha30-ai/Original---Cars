@@ -1,0 +1,193 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  PAID
+  FAILED
+}
+
+enum PaymentMethod {
+  INSTAPAY
+  VODAFONE_CASH
+  CASH
+}
+
+enum ServiceType {
+  UPHOLSTERY
+  POLISHING
+  LEATHER_REPAIR
+  FULL_CLEANING
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  password      String
+  role          Role      @default(USER)
+  isVerified    Boolean   @default(false)
+  avatarUrl     String?
+  phone         String?
+  address       String?
+  city          String?
+  governorate   String?
+  
+  otps          OTP[]
+  orders        Order[]
+  bookings      Booking[]
+  reviews       Review[]
+
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model OTP {
+  id        String   @id @default(cuid())
+  code      String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  imageUrl    String?
+  isActive    Boolean   @default(true)
+  
+  // Relations
+  products         Product[]
+  primaryProducts  Product[] @relation("PrimaryCategory")
+  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  price       Float
+  imageUrl    String?
+  // Categories
+  categoryId  String?
+  category    Category? @relation("PrimaryCategory", fields: [categoryId], references: [id])
+  categories  Category[] // Many-to-many relation for multiple categories
+  
+  oldCategory String   @default("general") @map("category")
+  stock       Int      @default(0)
+  images      String[] @default([])
+  tags        String[] @default([])
+  oldPrice    Float?
+  isActive    Boolean  @default(true)
+  
+  orderItems  OrderItem[]
+  reviews     Review[]
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Order {
+  id            String        @id @default(cuid())
+  userId        String
+  user          User          @relation(fields: [userId], references: [id])
+  totalAmount   Float
+  status        BookingStatus @default(PENDING)
+  paymentMethod PaymentMethod
+  paymentStatus PaymentStatus @default(PENDING)
+  address       String        @default("")
+  city          String?
+  governorate   String?
+  phone         String        @default("")
+  notes         String?
+  receiptUrl    String?       // Payment proof receipt image URL
+  
+  items         OrderItem[]
+
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int
+  price     Float
+}
+
+model Booking {
+  id            String        @id @default(cuid())
+  userId        String
+  user          User          @relation(fields: [userId], references: [id])
+  serviceType   ServiceType
+  carType       String        @default("")
+  carModel      String        @default("")
+  notes         String        @default("")
+  date          DateTime
+  totalAmount   Float         @default(0)
+  status        BookingStatus @default(PENDING)
+  paymentMethod PaymentMethod
+  paymentStatus PaymentStatus @default(PENDING)
+  receiptUrl    String?       // Optional payment proof receipt
+  
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model SiteSettings {
+  id          String   @id @default(cuid())
+  key         String   @unique // e.g., 'primary_color', 'secondary_color', 'site_name'
+  value       String
+  
+  updatedAt   DateTime @updatedAt
+}
+
+model Gallery {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  imageUrl    String
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  rating    Int
+  comment   String
+  isApproved Boolean @default(true) // Admin can moderate later if needed
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

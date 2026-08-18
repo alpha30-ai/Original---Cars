@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Luxury Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0b10" />
+      <stop offset="50%" stop-color="#12131c" />
+      <stop offset="100%" stop-color="#050608" />
+    </linearGradient>
+
+    <!-- Gold Metallic Gradient -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF2A3" />
+      <stop offset="25%" stop-color="#E5C158" />
+      <stop offset="50%" stop-color="#B8860B" />
+      <stop offset="75%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#996515" />
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="luxuryGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Outer Rounded Luxury Badge -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGradient)" />
+  <rect width="500" height="500" x="6" y="6" rx="122" fill="none" stroke="url(#goldGradient)" stroke-width="4" stroke-opacity="0.4" />
+  
+  <!-- Outer Subtle Ring -->
+  <circle cx="256" cy="256" r="216" fill="none" stroke="url(#goldGradient)" stroke-width="3" stroke-dasharray="8 6" stroke-opacity="0.35" />
+  <circle cx="256" cy="256" r="204" fill="none" stroke="url(#goldGradient)" stroke-width="2" stroke-opacity="0.6" />
+
+  <!-- Central Supercar Emblem "OR" Monogram -->
+  <g filter="url(#luxuryGlow)">
+    <!-- Letter 'O' (Left Luxury Ring/Shape) -->
+    <path 
+      d="M 190 140 
+         C 120 140, 80 190, 80 256 
+         C 80 322, 120 372, 190 372 
+         C 230 372, 260 350, 275 325 
+         L 245 295 
+         C 235 310, 215 325, 190 325 
+         C 145 325, 128 290, 128 256 
+         C 128 222, 145 187, 190 187 
+         C 215 187, 235 202, 245 217 
+         L 275 187 
+         C 260 162, 230 140, 190 140 Z" 
+      fill="url(#goldGradient)" 
+    />
+
+    <!-- Letter 'R' (Right Interlocking Precision Shape) -->
+    <path 
+      d="M 265 145 
+         L 380 145 
+         C 425 145, 450 175, 450 215 
+         C 450 248, 430 272, 395 282 
+         L 455 367 
+         L 400 367 
+         L 348 290 
+         L 315 290 
+         L 315 367 
+         L 265 367 
+         Z
+         M 315 190 
+         L 315 245 
+         L 370 245 
+         C 392 245, 402 235, 402 218 
+         C 402 200, 392 190, 370 190 
+         Z" 
+      fill="url(#goldGradient)" 
+    />
+
+    <!-- Crown / Apex Diamond Accent on Top of Emblem -->
+    <polygon points="256,92 270,118 256,110 242,118" fill="url(#goldGradient)" />
+    <circle cx="256" cy="78" r="6" fill="url(#goldGradient)" />
+  </g>
+
+  <!-- Bottom Brand Subtitle "ORIGINAL" -->
+  <text 
+    x="256" 
+    y="428" 
+    text-anchor="middle" 
+    fill="url(#goldGradient)" 
+    font-family="system-ui, -apple-system, sans-serif" 
+    font-size="28" 
+    font-weight="900" 
+    letter-spacing="10"
+    opacity="0.9"
+  >
+    ORIGINAL
+  </text>
+  
+  <text 
+    x="256" 
+    y="455" 
+    text-anchor="middle" 
+    fill="#8E8E93" 
+    font-family="system-ui, -apple-system, sans-serif" 
+    font-size="16" 
+    font-weight="700" 
+    letter-spacing="4"
+    opacity="0.75"
+  >
+    AUTOLUX
+  </text>
+</svg>
