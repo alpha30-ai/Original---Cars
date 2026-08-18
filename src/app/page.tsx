@@ -67,45 +67,45 @@ export default async function Home() {
       <Hero />
       
       {/* 2. Luxury Trust & Craftsmanship Strip */}
-      <section className="py-8 bg-card border-b border-border relative z-20 shadow-sm">
+      <section className="py-6 sm:py-8 bg-card border-b border-border relative z-20 shadow-sm">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 md:gap-6">
             
-            <div className="flex items-center gap-3.5 p-4 rounded-3xl bg-muted/30 border border-border/60 hover:border-primary/40 transition-colors">
+            <div className="flex items-center gap-3.5 p-4 rounded-2xl sm:rounded-3xl bg-muted/30 border border-border/60 hover:border-primary/40 transition-colors">
               <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 border border-primary/20">
                 <Crown className="w-6 h-6" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h4 className="font-black text-xs sm:text-sm text-foreground font-heading">خامات ألمانية معتمدة 100%</h4>
                 <p className="text-[11px] text-muted-foreground mt-0.5 font-medium">جلود نابا طبيعية وألكانتارا أصلية</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5 p-4 rounded-3xl bg-muted/30 border border-border/60 hover:border-primary/40 transition-colors">
+            <div className="flex items-center gap-3.5 p-4 rounded-2xl sm:rounded-3xl bg-muted/30 border border-border/60 hover:border-primary/40 transition-colors">
               <div className="w-12 h-12 rounded-2xl bg-accent/10 text-accent flex items-center justify-center shrink-0 border border-accent/20">
                 <Wrench className="w-6 h-6" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h4 className="font-black text-xs sm:text-sm text-foreground font-heading">تفصيل وقص ليزر CNC</h4>
                 <p className="text-[11px] text-muted-foreground mt-0.5 font-medium">مطابقة تامة لمقاسات الوكالة</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5 p-4 rounded-3xl bg-muted/30 border border-border/60 hover:border-primary/40 transition-colors">
+            <div className="flex items-center gap-3.5 p-4 rounded-2xl sm:rounded-3xl bg-muted/30 border border-border/60 hover:border-primary/40 transition-colors">
               <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0 border border-emerald-500/20">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h4 className="font-black text-xs sm:text-sm text-foreground font-heading">متوافق مع الوسائد الهوائية</h4>
                 <p className="text-[11px] text-muted-foreground mt-0.5 font-medium">خياطة أمان معتمدة (Airbags Safe)</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5 p-4 rounded-3xl bg-muted/30 border border-border/60 hover:border-primary/40 transition-colors">
+            <div className="flex items-center gap-3.5 p-4 rounded-2xl sm:rounded-3xl bg-muted/30 border border-border/60 hover:border-primary/40 transition-colors">
               <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center shrink-0 border border-indigo-500/20">
                 <Award className="w-6 h-6" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h4 className="font-black text-xs sm:text-sm text-foreground font-heading">ضمان ذهبي 5 سنوات</h4>
                 <p className="text-[11px] text-muted-foreground mt-0.5 font-medium">ضد التقشير وتغير الألوان والعيوب</p>
               </div>

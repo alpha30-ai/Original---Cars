@@ -65,7 +65,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background pt-36 sm:pt-44 pb-28 relative overflow-hidden" dir="rtl">
+    <div className="min-h-screen bg-background pt-32 sm:pt-40 pb-20 sm:pb-28 relative overflow-hidden" dir="rtl">
       
       {/* Background Mesh */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -74,15 +74,15 @@ export default function AboutPage() {
         <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-accent/15 rounded-full blur-[140px]" />
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10 space-y-24">
+      <div className="container mx-auto px-3 sm:px-6 md:px-8 max-w-6xl relative z-10 space-y-16 sm:space-y-24">
         
         {/* Hero Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary font-black text-xs border border-primary/20 shadow-sm">
+        <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-primary/10 text-primary font-black text-xs border border-primary/20 shadow-sm">
             <Crown className="w-4 h-4" />
             <span>قصة الريادة والشغف</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-foreground leading-tight font-heading">
+          <h1 className="text-2xl sm:text-5xl md:text-6xl font-black text-foreground leading-tight font-heading">
             نحن <span className="text-primary">أورجينال</span>، حيث تلتقي الفخامة بالدقة الألمانية
           </h1>
           <p className="text-muted-foreground text-xs sm:text-sm md:text-base leading-relaxed">
@@ -90,55 +90,57 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Story & Vision Big Card */}
-        <div className="bg-card border border-border rounded-3xl p-8 md:p-14 shadow-xl relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div className="space-y-6">
+        {/* Story & Vision Big Card (Optimized for Mobile & Large Screens) */}
+        <div className="bg-card border border-border rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-14 shadow-xl relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 items-center">
+            <div className="space-y-4 sm:space-y-6">
               <span className="text-xs font-black text-primary tracking-widest uppercase block">رسالتنا ورؤيتنا</span>
-              <h2 className="text-2xl md:text-4xl font-black text-foreground leading-snug font-heading">
+              <h2 className="text-xl sm:text-3xl md:text-4xl font-black text-foreground leading-snug font-heading">
                 إعادة تعريف الراحة والفخامة داخل مقصورة سيارتك
               </h2>
               <p className="text-muted-foreground text-xs sm:text-sm md:text-base leading-relaxed">
                 في أورجينال، نؤمن بأن مقصورة سيارتك هي مساحتك الخاصة التي تستحق أرقى أنواع الخامات. لا نعتمد على الحلول الجاهزة، بل نقوم بتفصيل وتصميم الفرش والتابلوه والأسقف يدوياً باستخدام جلود نابا وجلود ألمانية وألكانتارا أصلية تمنحك إحساس الطائرة الخاصة والسيارات الفارهة.
               </p>
-              <div className="grid grid-cols-3 gap-3 pt-2">
-                <div className="bg-muted/40 p-4 rounded-2xl border border-border text-center">
-                  <h4 className="font-black text-2xl text-primary mb-1 font-heading">+10</h4>
-                  <p className="text-[11px] text-muted-foreground font-bold">سنوات من الريادة</p>
+              
+              {/* 3 High-Trust Counters (Clean Responsive Layout) */}
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-2">
+                <div className="bg-muted/40 p-2.5 sm:p-4 rounded-xl sm:rounded-2xl border border-border text-center">
+                  <h4 className="font-black text-base sm:text-2xl text-primary mb-0.5 sm:mb-1 font-heading">+10</h4>
+                  <p className="text-[10px] sm:text-[11px] text-muted-foreground font-bold truncate">سنوات خبرة</p>
                 </div>
-                <div className="bg-muted/40 p-4 rounded-2xl border border-border text-center">
-                  <h4 className="font-black text-2xl text-primary mb-1 font-heading">+5,000</h4>
-                  <p className="text-[11px] text-muted-foreground font-bold">سيارة تم تجديدها</p>
+                <div className="bg-muted/40 p-2.5 sm:p-4 rounded-xl sm:rounded-2xl border border-border text-center">
+                  <h4 className="font-black text-base sm:text-2xl text-primary mb-0.5 sm:mb-1 font-heading">+5,000</h4>
+                  <p className="text-[10px] sm:text-[11px] text-muted-foreground font-bold truncate">سيارة مجددة</p>
                 </div>
-                <div className="bg-muted/40 p-4 rounded-2xl border border-border text-center">
-                  <h4 className="font-black text-2xl text-primary mb-1 font-heading">100%</h4>
-                  <p className="text-[11px] text-muted-foreground font-bold">خامات أوروبية</p>
+                <div className="bg-muted/40 p-2.5 sm:p-4 rounded-xl sm:rounded-2xl border border-border text-center">
+                  <h4 className="font-black text-base sm:text-2xl text-primary mb-0.5 sm:mb-1 font-heading">100%</h4>
+                  <p className="text-[10px] sm:text-[11px] text-muted-foreground font-bold truncate">خامات أصلية</p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-3xl overflow-hidden shadow-2xl relative border border-border aspect-[4/3] group">
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl relative border border-border aspect-[16/10] sm:aspect-[4/3] group">
               <img 
                 src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop" 
                 alt="Original Workshop" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-6 right-6 left-6 text-white">
-                <span className="text-xs font-bold text-primary block mb-1 font-heading">الورشة المركزية المعتمدة</span>
-                <h3 className="font-black text-lg">أحدث أجهزة التفصيل والقص بالليزر</h3>
+              <div className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6 left-4 sm:left-6 text-white">
+                <span className="text-[10px] sm:text-xs font-bold text-primary block mb-0.5 sm:mb-1 font-heading">الورشة المركزية المعتمدة</span>
+                <h3 className="font-black text-sm sm:text-lg">أحدث أجهزة التفصيل والقص بالليزر</h3>
               </div>
             </div>
           </div>
         </div>
 
         {/* The 7-Step Craftsmanship Process */}
-        <div className="space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-primary font-black tracking-widest uppercase text-xs bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">
+        <div className="space-y-8 sm:space-y-12">
+          <div className="text-center max-w-2xl mx-auto space-y-2 sm:space-y-3">
+            <span className="text-primary font-black tracking-widest uppercase text-[11px] sm:text-xs bg-primary/10 px-3.5 sm:px-4 py-1.5 rounded-full border border-primary/20">
               دورة العمل المعتمدة
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-foreground font-heading">
+            <h2 className="text-xl sm:text-4xl font-black text-foreground font-heading">
               مراحل التفصيل اليدوي <span className="text-primary">السبعة في أورجينال</span>
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -146,21 +148,21 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {processSteps.map((step, idx) => (
               <div 
                 key={idx} 
-                className={`p-6 rounded-3xl bg-card border border-border shadow-sm hover:border-primary/50 transition-all hover:-translate-y-1 space-y-3 ${
+                className={`p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-card border border-border shadow-sm hover:border-primary/50 transition-all hover:-translate-y-1 space-y-2.5 sm:space-y-3 ${
                   idx === 6 ? "md:col-span-2 lg:col-span-3 bg-gradient-to-r from-primary/10 via-card to-primary/5 border-primary/30" : ""
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <span className="w-10 h-10 rounded-2xl bg-primary text-primary-foreground font-black text-sm flex items-center justify-center font-heading">
+                  <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-primary text-primary-foreground font-black text-xs sm:text-sm flex items-center justify-center font-heading">
                     {step.num}
                   </span>
                   <Sparkles className="w-4 h-4 text-primary" />
                 </div>
-                <h3 className="font-black text-base text-foreground font-heading">{step.title}</h3>
+                <h3 className="font-black text-sm sm:text-base text-foreground font-heading">{step.title}</h3>
                 <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
             ))}
@@ -168,33 +170,33 @@ export default function AboutPage() {
         </div>
 
         {/* Pillars / Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-8">
           
-          <div className="bg-card border border-border rounded-3xl p-8 shadow-sm space-y-4 hover:border-primary/50 transition-all hover:-translate-y-1">
-            <div className="w-14 h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
-              <Crown className="w-7 h-7" />
+          <div className="bg-card border border-border rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm space-y-3 sm:space-y-4 hover:border-primary/50 transition-all hover:-translate-y-1">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary/10 text-primary rounded-2xl flex items-center justify-center">
+              <Crown className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
-            <h3 className="text-xl font-black text-foreground font-heading">خامات أوروبية معتمدة 100%</h3>
+            <h3 className="text-lg sm:text-xl font-black text-foreground font-heading">خامات أوروبية معتمدة 100%</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
               نستورد مباشرة أفضل جلود النابا الألمانية، الجلود الإيطالية الطبيعية، والألكانتارا المقاومة للحرارة والاهتراء لضمان بقاء الفرش كالجديد لسنوات.
             </p>
           </div>
 
-          <div className="bg-card border border-border rounded-3xl p-8 shadow-sm space-y-4 hover:border-accent/50 transition-all hover:-translate-y-1">
-            <div className="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center">
-              <Wrench className="w-7 h-7" />
+          <div className="bg-card border border-border rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm space-y-3 sm:space-y-4 hover:border-accent/50 transition-all hover:-translate-y-1">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center">
+              <Wrench className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
-            <h3 className="text-xl font-black text-foreground font-heading">أيدي حرفية متمرسة</h3>
+            <h3 className="text-lg sm:text-xl font-black text-foreground font-heading">أيدي حرفية متمرسة</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
               فريقنا يضم نخبة من أمهر الفنيين المتخصصين في تفصيل وتنجيد كراسي وأسقف وتابلوهات السيارات الرياضية والفارهة بدقة ملليمترية.
             </p>
           </div>
 
-          <div className="bg-card border border-border rounded-3xl p-8 shadow-sm space-y-4 hover:border-green-500/50 transition-all hover:-translate-y-1">
-            <div className="w-14 h-14 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center">
-              <ShieldCheck className="w-7 h-7" />
+          <div className="bg-card border border-border rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm space-y-3 sm:space-y-4 hover:border-green-500/50 transition-all hover:-translate-y-1">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-green-500/10 text-green-500 rounded-2xl flex items-center justify-center">
+              <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7" />
             </div>
-            <h3 className="text-xl font-black text-foreground font-heading">الضمان الذهبي الشامل</h3>
+            <h3 className="text-lg sm:text-xl font-black text-foreground font-heading">الضمان الذهبي الشامل</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
               نقدم شهادة ضمان معتمدة وموثقة تصل إلى 5 سنوات على كافة أعمال التنجيد والفرش والتطريز مع خدمة المتابعة الدورية بعد التركيب.
             </p>
@@ -203,23 +205,23 @@ export default function AboutPage() {
         </div>
 
         {/* CTA Bottom Banner */}
-        <div className="bg-gradient-to-l from-primary via-primary/90 to-accent rounded-3xl p-8 md:p-14 text-primary-foreground flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+        <div className="bg-gradient-to-l from-primary via-primary/90 to-accent rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-14 text-primary-foreground flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl">
           <div className="space-y-2 text-center md:text-right">
-            <h3 className="text-2xl md:text-4xl font-black font-heading">جاهز لتجربة الفخامة لسيارتك؟</h3>
-            <p className="text-sm text-primary-foreground/90 font-medium max-w-xl">
+            <h3 className="text-xl sm:text-2xl md:text-4xl font-black font-heading">جاهز لتجربة الفخامة لسيارتك؟</h3>
+            <p className="text-xs sm:text-sm text-primary-foreground/90 font-medium max-w-xl">
               تصفح متجرنا الحصري أو احجز موعدك الآن مع خبرائنا في المركز المعتمد.
             </p>
           </div>
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-3 sm:gap-4 justify-center w-full md:w-auto">
             <Link
               href="/shop"
-              className="bg-white text-black hover:bg-white/90 px-8 py-4 rounded-2xl font-black text-sm transition-all shadow-lg hover:-translate-y-0.5"
+              className="w-full sm:w-auto text-center bg-white text-black hover:bg-white/90 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm transition-all shadow-lg hover:-translate-y-0.5"
             >
               تصفح المتجر
             </Link>
             <Link
               href="/booking"
-              className="bg-black/30 hover:bg-black/40 text-white border border-white/20 px-8 py-4 rounded-2xl font-black text-sm transition-all shadow-lg hover:-translate-y-0.5"
+              className="w-full sm:w-auto text-center bg-black/30 hover:bg-black/40 text-white border border-white/20 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm transition-all shadow-lg hover:-translate-y-0.5"
             >
               حجز موعد تنجيد
             </Link>
