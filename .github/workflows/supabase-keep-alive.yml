@@ -1,0 +1,17 @@
+name: Supabase Database Keep-Alive
+
+on:
+  schedule:
+    # Runs every 2 days at 06:00 UTC
+    - cron: '0 6 */2 * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  ping-database:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase Keep-Alive Endpoint
+        run: |
+          echo "Sending keep-alive ping to database..."
+          RESPONSE=$(curl -s -w "\nHTTP_STATUS:%{http_code}" https://original-cars.vercel.app/api/cron/keep-alive || true)
+          echo "Response: $RESPONSE"
