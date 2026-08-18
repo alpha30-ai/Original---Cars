@@ -74,24 +74,24 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="grid grid-cols-3 gap-2.5 sm:gap-4 pt-1 max-w-xl"
+              className="grid grid-cols-3 gap-2 sm:gap-4 pt-1 max-w-xl"
             >
               {/* Counter 1 */}
-              <div className="bg-card/90 backdrop-blur-xl p-3.5 sm:p-4 rounded-2xl border-2 border-primary/20 shadow-lg shadow-primary/5 text-center">
-                <span className="block font-black text-xl sm:text-2xl text-primary font-heading">+5,000</span>
-                <span className="text-[11px] sm:text-xs text-foreground font-black block mt-0.5">سيارة تم تجديدها</span>
+              <div className="bg-card/90 backdrop-blur-xl p-2.5 sm:p-4 rounded-2xl border-2 border-primary/20 shadow-lg shadow-primary/5 text-center flex flex-col justify-center items-center h-full min-h-[72px] sm:min-h-[88px]">
+                <span className="block font-black text-sm sm:text-2xl text-primary font-heading whitespace-nowrap">+5,000</span>
+                <span className="text-[10px] sm:text-xs text-foreground font-black block mt-0.5 sm:mt-1 truncate w-full">سيارة مجددة</span>
               </div>
               
               {/* Counter 2 */}
-              <div className="bg-card/90 backdrop-blur-xl p-3.5 sm:p-4 rounded-2xl border-2 border-primary/20 shadow-lg shadow-primary/5 text-center">
-                <span className="block font-black text-xl sm:text-2xl text-primary font-heading">100%</span>
-                <span className="text-[11px] sm:text-xs text-foreground font-black block mt-0.5">جلود ألمانية معتمدة</span>
+              <div className="bg-card/90 backdrop-blur-xl p-2.5 sm:p-4 rounded-2xl border-2 border-primary/20 shadow-lg shadow-primary/5 text-center flex flex-col justify-center items-center h-full min-h-[72px] sm:min-h-[88px]">
+                <span className="block font-black text-sm sm:text-2xl text-primary font-heading whitespace-nowrap">100%</span>
+                <span className="text-[10px] sm:text-xs text-foreground font-black block mt-0.5 sm:mt-1 truncate w-full">جلود ألمانية</span>
               </div>
               
               {/* Counter 3 */}
-              <div className="bg-card/90 backdrop-blur-xl p-3.5 sm:p-4 rounded-2xl border-2 border-primary/20 shadow-lg shadow-primary/5 text-center">
-                <span className="block font-black text-xl sm:text-2xl text-primary font-heading">5 سنوات</span>
-                <span className="text-[11px] sm:text-xs text-foreground font-black block mt-0.5">ضمان ذهبي موثق</span>
+              <div className="bg-card/90 backdrop-blur-xl p-2.5 sm:p-4 rounded-2xl border-2 border-primary/20 shadow-lg shadow-primary/5 text-center flex flex-col justify-center items-center h-full min-h-[72px] sm:min-h-[88px]">
+                <span className="block font-black text-sm sm:text-2xl text-primary font-heading whitespace-nowrap">5 سنوات</span>
+                <span className="text-[10px] sm:text-xs text-foreground font-black block mt-0.5 sm:mt-1 truncate w-full">ضمان ذهبي</span>
               </div>
             </motion.div>
             
