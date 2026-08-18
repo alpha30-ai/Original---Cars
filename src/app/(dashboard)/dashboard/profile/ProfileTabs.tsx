@@ -381,7 +381,7 @@ export default function ProfileTabs({ user, orders, bookings }: ProfileTabsProps
         </div>
 
         {/* Mobile Horizontal Quick Tabs (Shows only on mobile/tablet for effortless switching) */}
-        <div className="flex lg:hidden overflow-x-auto gap-2 p-1.5 bg-card/90 backdrop-blur-md rounded-2xl border border-border mb-6 shadow-sm">
+        <div className="flex lg:hidden overflow-x-auto gap-2 p-1.5 bg-card/90 backdrop-blur-md rounded-2xl border border-border mb-6 shadow-sm no-scrollbar [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             const Icon = tab.icon;
