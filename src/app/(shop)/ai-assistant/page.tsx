@@ -20,7 +20,8 @@ import {
   MessageSquare,
   Flame,
   Award,
-  RefreshCw
+  RefreshCw,
+  Home
 } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -149,7 +150,7 @@ export default function AIAssistantPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-32 sm:pt-36 pb-12 relative flex flex-col justify-between" dir="rtl">
+    <div className="min-h-[100dvh] bg-background pt-24 sm:pt-36 pb-8 sm:pb-12 relative flex flex-col justify-between" dir="rtl">
       
       {/* Background Ambience */}
       <div className="absolute inset-0 pointer-events-none opacity-25">
@@ -157,71 +158,86 @@ export default function AIAssistantPage() {
         <div className="absolute bottom-1/4 left-10 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[160px]" />
       </div>
 
-      <div className="container mx-auto px-3 sm:px-6 md:px-8 max-w-7xl relative z-10 flex-1 flex flex-col space-y-4 sm:space-y-6">
+      <div className="container mx-auto px-3 sm:px-6 md:px-8 max-w-7xl relative z-10 flex-1 flex flex-col space-y-3 sm:space-y-6">
         
-        {/* Top Header Bar (Responsive for Mobile & Desktop) */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 sm:gap-4 bg-card/85 backdrop-blur-md p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-border shadow-sm">
-          <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-            <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-lg shadow-primary/20 shrink-0">
-              <Bot className="w-5 h-5 sm:w-7 sm:h-7" />
-            </div>
-            <div className="min-w-0">
-              <div className="flex items-center gap-2">
-                <h1 className="text-sm sm:text-xl md:text-2xl font-black text-foreground font-heading truncate">
-                  المساعد الذكي واستشارات السيارات
-                </h1>
-                <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+        {/* Top Header Bar (Sleek Compact Bar on Mobile & Grand Luxury on Desktop) */}
+        <div className="bg-card/90 backdrop-blur-md p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl border border-border shadow-sm">
+          <div className="flex items-center justify-between gap-3">
+            
+            {/* Right: Bot Info */}
+            <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+              <div className="relative">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-md shadow-primary/20 shrink-0">
+                  <Bot className="w-5 h-5 sm:w-7 sm:h-7" />
+                </div>
+                <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-card animate-pulse" />
               </div>
-              <p className="text-[11px] sm:text-xs text-muted-foreground mt-0.5 line-clamp-1 sm:line-clamp-none">
-                مستشارك الفني على مدار الساعة للأسعار، الخامات الألمانية، ومقاسات سيارتك
-              </p>
+
+              <div className="min-w-0">
+                <div className="flex items-center gap-2">
+                  <h1 className="text-sm sm:text-xl md:text-2xl font-black text-foreground font-heading">
+                    <span className="sm:hidden">المساعد الذكي AI</span>
+                    <span className="hidden sm:inline">المساعد الذكي واستشارات مقصورة السيارات</span>
+                  </h1>
+                </div>
+                <p className="text-[11px] sm:text-xs text-muted-foreground mt-0.5 hidden sm:block">
+                  مستشارك الفني على مدار الساعة للأسعار، الخامات الألمانية، ومطابقة مقاسات سيارتك
+                </p>
+                <p className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 sm:hidden flex items-center gap-1">
+                  <span>مستشارك الفني 24/7</span>
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-2 sm:flex items-center gap-2 sm:gap-3 w-full md:w-auto pt-1 sm:pt-0">
-            <button
-              onClick={handleResetChat}
-              className="px-3 sm:px-4 py-2 sm:py-2.5 bg-muted hover:bg-muted/80 text-foreground font-bold rounded-xl sm:rounded-2xl text-[11px] sm:text-xs flex items-center justify-center gap-1.5 border border-border transition-colors shrink-0"
-            >
-              <RefreshCw className="w-3.5 h-3.5" />
-              <span>محادثة جديدة</span>
-            </button>
+            {/* Left: Quick Header Actions */}
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+              <button
+                onClick={handleResetChat}
+                title="بدء محادثة جديدة"
+                className="p-2.5 sm:px-4 sm:py-2.5 bg-muted hover:bg-muted/80 text-foreground font-bold rounded-xl sm:rounded-2xl text-xs flex items-center justify-center gap-1.5 border border-border transition-colors shadow-sm"
+              >
+                <RefreshCw className="w-4 h-4" />
+                <span className="hidden sm:inline">محادثة جديدة</span>
+              </button>
 
-            <Link
-              href="/booking"
-              className="px-3 sm:px-6 py-2 sm:py-2.5 bg-primary text-primary-foreground font-black rounded-xl sm:rounded-2xl text-[11px] sm:text-xs flex items-center justify-center gap-1.5 hover:bg-primary/90 transition-all shadow-md shadow-primary/20 shrink-0"
-            >
-              <Calendar className="w-3.5 h-3.5" />
-              <span>حجز موعد بالمركز</span>
-            </Link>
+              <Link
+                href="/booking"
+                className="px-3.5 py-2.5 sm:px-6 sm:py-2.5 bg-primary text-primary-foreground font-black rounded-xl sm:rounded-2xl text-xs flex items-center justify-center gap-1.5 hover:bg-primary/90 transition-all shadow-md shadow-primary/20"
+              >
+                <Calendar className="w-4 h-4" />
+                <span className="hidden sm:inline">حجز موعد بالمركز</span>
+                <span className="sm:hidden">حجز موعد</span>
+              </Link>
+            </div>
+
           </div>
         </div>
 
         {/* Full-Page 2-Column Workstation Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 flex-1 items-stretch min-h-[550px] sm:min-h-[620px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 flex-1 items-stretch min-h-[500px] sm:min-h-[620px]">
           
           {/* Right Column: Interactive Chat Area (8 Cols) */}
-          <div className="lg:col-span-8 bg-card rounded-2xl sm:rounded-3xl border border-border shadow-xl flex flex-col overflow-hidden h-full min-h-[520px] sm:min-h-[580px]">
+          <div className="lg:col-span-8 bg-card rounded-2xl sm:rounded-3xl border border-border shadow-xl flex flex-col overflow-hidden h-full min-h-[480px] sm:min-h-[580px]">
             
             {/* Scrollable Messages Area */}
             <div 
               ref={chatContainerRef}
-              className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6 bg-muted/10 max-h-[500px] sm:max-h-[560px]"
+              className="flex-1 overflow-y-auto p-3.5 sm:p-6 md:p-8 space-y-3.5 sm:space-y-6 bg-muted/10 max-h-[460px] sm:max-h-[560px]"
             >
               {messages.map((msg) => (
                 <div
                   key={msg.id}
-                  className={`flex gap-2.5 sm:gap-3.5 text-xs sm:text-sm ${
+                  className={`flex gap-2 sm:gap-3.5 text-xs sm:text-sm ${
                     msg.role === "user" ? "justify-end" : "justify-start"
                   }`}
                 >
                   {msg.role === "assistant" && (
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shrink-0 shadow-md shadow-primary/20 mt-1">
-                      <Bot className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-lg sm:rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shrink-0 shadow-md shadow-primary/20 mt-1">
+                      <Bot className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                     </div>
                   )}
 
-                  <div className={`space-y-2.5 sm:space-y-3 max-w-[88%] sm:max-w-[85%] ${msg.role === "user" ? "items-end" : "items-start"}`}>
+                  <div className={`space-y-2 sm:space-y-3 max-w-[90%] sm:max-w-[85%] ${msg.role === "user" ? "items-end" : "items-start"}`}>
                     <div
                       className={`p-3.5 sm:p-5 rounded-2xl sm:rounded-3xl whitespace-pre-line leading-relaxed text-xs sm:text-sm ${
                         msg.role === "user"
@@ -288,21 +304,21 @@ export default function AIAssistantPage() {
             </div>
 
             {/* Bottom Input Area */}
-            <div className="p-3 sm:p-5 bg-card border-t border-border flex items-center gap-2 sm:gap-3">
+            <div className="p-2.5 sm:p-5 bg-card border-t border-border flex items-center gap-2 sm:gap-3">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
-                placeholder="اكتب سؤالك عن الفرش، الأسعار، الخامات، أو طلب موعد..."
-                className="flex-1 bg-background border border-border rounded-xl sm:rounded-2xl px-3.5 sm:px-5 py-3 sm:py-3.5 text-xs sm:text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary font-medium"
+                placeholder="اكتب سؤالك عن الفرش، الأسعار، أو الخامات..."
+                className="flex-1 bg-background border border-border rounded-xl sm:rounded-2xl px-3.5 sm:px-5 py-2.5 sm:py-3.5 text-xs sm:text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary font-medium"
               />
               <button
                 onClick={() => handleSend()}
                 disabled={loading || !input.trim()}
-                className="px-4 sm:px-6 py-3 sm:py-3.5 bg-primary text-primary-foreground rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm flex items-center gap-2 hover:bg-primary/90 transition-all disabled:opacity-40 shadow-md shadow-primary/20 shrink-0"
+                className="px-3.5 sm:px-6 py-2.5 sm:py-3.5 bg-primary text-primary-foreground rounded-xl sm:rounded-2xl font-black text-xs sm:text-sm flex items-center gap-1.5 hover:bg-primary/90 transition-all disabled:opacity-40 shadow-md shadow-primary/20 shrink-0"
               >
-                <Send className="w-4 h-4" />
+                <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span className="hidden sm:inline">إرسال</span>
               </button>
             </div>
@@ -326,7 +342,7 @@ export default function AIAssistantPage() {
                     <button
                       key={idx}
                       onClick={() => handleSend(topic.query)}
-                      className="w-full text-right p-3 sm:p-3.5 rounded-xl sm:rounded-2xl bg-muted/30 hover:bg-primary/10 border border-border hover:border-primary/40 text-foreground transition-all flex items-center justify-between gap-3 group"
+                      className="w-full text-right p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-muted/30 hover:bg-primary/10 border border-border hover:border-primary/40 text-foreground transition-all flex items-center justify-between gap-3 group"
                     >
                       <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                         <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
