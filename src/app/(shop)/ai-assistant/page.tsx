@@ -150,63 +150,60 @@ export default function AIAssistantPage() {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-background pt-24 sm:pt-36 pb-8 sm:pb-12 relative flex flex-col justify-between" dir="rtl">
+    <div className="w-full min-h-[100dvh] bg-background pt-24 sm:pt-36 pb-8 sm:pb-12 relative flex flex-col justify-between overflow-x-hidden" dir="rtl">
       
-      {/* Background Ambience */}
-      <div className="absolute inset-0 pointer-events-none opacity-25">
-        <div className="absolute top-1/4 right-10 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[160px]" />
-        <div className="absolute bottom-1/4 left-10 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[160px]" />
+      {/* Background Ambience (Contained) */}
+      <div className="absolute inset-0 pointer-events-none opacity-25 overflow-hidden">
+        <div className="absolute top-1/4 right-0 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-primary/10 rounded-full blur-[140px]" />
+        <div className="absolute bottom-1/4 left-0 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] bg-accent/15 rounded-full blur-[140px]" />
       </div>
 
-      <div className="container mx-auto px-3 sm:px-6 md:px-8 max-w-7xl relative z-10 flex-1 flex flex-col space-y-3 sm:space-y-6">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 md:px-8 relative z-10 flex-1 flex flex-col space-y-3 sm:space-y-6">
         
-        {/* Top Header Bar (Sleek Compact Bar on Mobile & Grand Luxury on Desktop) */}
-        <div className="bg-card/90 backdrop-blur-md p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl border border-border shadow-sm">
-          <div className="flex items-center justify-between gap-3">
+        {/* Top Header Card (Flawless Balanced Layout on Mobile & Luxury on Desktop) */}
+        <div className="w-full bg-card/90 backdrop-blur-md p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-border shadow-sm">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3.5 sm:gap-4">
             
             {/* Right: Bot Info */}
             <div className="flex items-center gap-3 sm:gap-4 min-w-0">
-              <div className="relative">
-                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-md shadow-primary/20 shrink-0">
-                  <Bot className="w-5 h-5 sm:w-7 sm:h-7" />
+              <div className="relative shrink-0">
+                <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-md shadow-primary/20">
+                  <Bot className="w-6 h-6 sm:w-7 sm:h-7" />
                 </div>
                 <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-500 border-2 border-card animate-pulse" />
               </div>
 
-              <div className="min-w-0">
-                <div className="flex items-center gap-2">
-                  <h1 className="text-sm sm:text-xl md:text-2xl font-black text-foreground font-heading">
-                    <span className="sm:hidden">المساعد الذكي AI</span>
-                    <span className="hidden sm:inline">المساعد الذكي واستشارات مقصورة السيارات</span>
-                  </h1>
-                </div>
+              <div className="min-w-0 flex-1">
+                <h1 className="text-base sm:text-xl md:text-2xl font-black text-foreground font-heading leading-tight">
+                  <span className="sm:hidden">المساعد الذكي AI</span>
+                  <span className="hidden sm:inline">المساعد الذكي واستشارات مقصورة السيارات</span>
+                </h1>
                 <p className="text-[11px] sm:text-xs text-muted-foreground mt-0.5 hidden sm:block">
                   مستشارك الفني على مدار الساعة للأسعار، الخامات الألمانية، ومطابقة مقاسات سيارتك
                 </p>
-                <p className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 sm:hidden flex items-center gap-1">
-                  <span>مستشارك الفني 24/7</span>
+                <p className="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 sm:hidden flex items-center gap-1 mt-0.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
+                  <span>مستشارك الفني متاح 24/7</span>
                 </p>
               </div>
             </div>
 
-            {/* Left: Quick Header Actions */}
-            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Left: Quick Actions (Balanced Grid on Mobile, Inline on Desktop) */}
+            <div className="grid grid-cols-2 sm:flex items-center gap-2 sm:gap-3 w-full sm:w-auto pt-1 sm:pt-0 shrink-0">
               <button
                 onClick={handleResetChat}
-                title="بدء محادثة جديدة"
-                className="p-2.5 sm:px-4 sm:py-2.5 bg-muted hover:bg-muted/80 text-foreground font-bold rounded-xl sm:rounded-2xl text-xs flex items-center justify-center gap-1.5 border border-border transition-colors shadow-sm"
+                className="px-3.5 py-2.5 sm:px-4 sm:py-2.5 bg-muted hover:bg-muted/80 text-foreground font-bold rounded-xl sm:rounded-2xl text-xs flex items-center justify-center gap-1.5 border border-border transition-colors shadow-sm"
               >
-                <RefreshCw className="w-4 h-4" />
-                <span className="hidden sm:inline">محادثة جديدة</span>
+                <RefreshCw className="w-3.5 h-3.5" />
+                <span>محادثة جديدة</span>
               </button>
 
               <Link
                 href="/booking"
-                className="px-3.5 py-2.5 sm:px-6 sm:py-2.5 bg-primary text-primary-foreground font-black rounded-xl sm:rounded-2xl text-xs flex items-center justify-center gap-1.5 hover:bg-primary/90 transition-all shadow-md shadow-primary/20"
+                className="px-3.5 py-2.5 sm:px-6 sm:py-2.5 bg-primary text-primary-foreground font-black rounded-xl sm:rounded-2xl text-xs flex items-center justify-center gap-1.5 hover:bg-primary/90 transition-all shadow-md shadow-primary/20 text-center"
               >
-                <Calendar className="w-4 h-4" />
-                <span className="hidden sm:inline">حجز موعد بالمركز</span>
-                <span className="sm:hidden">حجز موعد</span>
+                <Calendar className="w-3.5 h-3.5" />
+                <span>حجز موعد بالمركز</span>
               </Link>
             </div>
 
@@ -214,20 +211,20 @@ export default function AIAssistantPage() {
         </div>
 
         {/* Full-Page 2-Column Workstation Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 flex-1 items-stretch min-h-[500px] sm:min-h-[620px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 flex-1 items-stretch min-h-[480px] sm:min-h-[620px] w-full">
           
           {/* Right Column: Interactive Chat Area (8 Cols) */}
-          <div className="lg:col-span-8 bg-card rounded-2xl sm:rounded-3xl border border-border shadow-xl flex flex-col overflow-hidden h-full min-h-[480px] sm:min-h-[580px]">
+          <div className="lg:col-span-8 bg-card rounded-2xl sm:rounded-3xl border border-border shadow-xl flex flex-col overflow-hidden h-full min-h-[460px] sm:min-h-[580px] w-full">
             
             {/* Scrollable Messages Area */}
             <div 
               ref={chatContainerRef}
-              className="flex-1 overflow-y-auto p-3.5 sm:p-6 md:p-8 space-y-3.5 sm:space-y-6 bg-muted/10 max-h-[460px] sm:max-h-[560px]"
+              className="flex-1 overflow-y-auto p-3.5 sm:p-6 md:p-8 space-y-3.5 sm:space-y-6 bg-muted/10 max-h-[460px] sm:max-h-[560px] w-full"
             >
               {messages.map((msg) => (
                 <div
                   key={msg.id}
-                  className={`flex gap-2 sm:gap-3.5 text-xs sm:text-sm ${
+                  className={`flex gap-2 sm:gap-3.5 text-xs sm:text-sm w-full ${
                     msg.role === "user" ? "justify-end" : "justify-start"
                   }`}
                 >
@@ -284,7 +281,7 @@ export default function AIAssistantPage() {
                           <button
                             key={i}
                             onClick={() => handleSend(sug)}
-                            className="bg-card hover:bg-muted border border-border text-muted-foreground hover:text-foreground px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-colors"
+                            className="bg-card hover:bg-muted border border-border text-muted-foreground hover:text-foreground px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition-colors text-right"
                           >
                             💬 {sug}
                           </button>
@@ -304,14 +301,14 @@ export default function AIAssistantPage() {
             </div>
 
             {/* Bottom Input Area */}
-            <div className="p-2.5 sm:p-5 bg-card border-t border-border flex items-center gap-2 sm:gap-3">
+            <div className="p-2.5 sm:p-5 bg-card border-t border-border flex items-center gap-2 sm:gap-3 w-full">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                 placeholder="اكتب سؤالك عن الفرش، الأسعار، أو الخامات..."
-                className="flex-1 bg-background border border-border rounded-xl sm:rounded-2xl px-3.5 sm:px-5 py-2.5 sm:py-3.5 text-xs sm:text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary font-medium"
+                className="flex-1 bg-background border border-border rounded-xl sm:rounded-2xl px-3.5 sm:px-5 py-2.5 sm:py-3.5 text-xs sm:text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary font-medium min-w-0"
               />
               <button
                 onClick={() => handleSend()}
@@ -326,16 +323,16 @@ export default function AIAssistantPage() {
           </div>
 
           {/* Left Column: Popular Quick Queries & Certified Center Info (4 Cols) */}
-          <div className="lg:col-span-4 space-y-4 sm:space-y-6 flex flex-col justify-between">
+          <div className="lg:col-span-4 space-y-4 sm:space-y-6 flex flex-col justify-between w-full">
             
             {/* Quick Prompt Cards */}
-            <div className="bg-card rounded-2xl sm:rounded-3xl border border-border p-4 sm:p-6 shadow-sm space-y-3 sm:space-y-4">
+            <div className="bg-card rounded-2xl sm:rounded-3xl border border-border p-4 sm:p-6 shadow-sm space-y-3 sm:space-y-4 w-full">
               <h3 className="text-xs font-black text-foreground font-heading flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary" />
                 <span>الاستفسارات الشائعة والأكثر طلباً:</span>
               </h3>
               
-              <div className="space-y-2">
+              <div className="space-y-2 w-full">
                 {POPULAR_TOPICS.map((topic, idx) => {
                   const Icon = topic.icon;
                   return (
@@ -360,7 +357,7 @@ export default function AIAssistantPage() {
             </div>
 
             {/* Certified Guarantee Badge */}
-            <div className="bg-gradient-to-br from-primary/10 via-card to-accent/10 rounded-2xl sm:rounded-3xl border border-primary/20 p-4 sm:p-6 shadow-sm space-y-2.5 sm:space-y-3">
+            <div className="bg-gradient-to-br from-primary/10 via-card to-accent/10 rounded-2xl sm:rounded-3xl border border-primary/20 p-4 sm:p-6 shadow-sm space-y-2.5 sm:space-y-3 w-full">
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary text-primary-foreground flex items-center justify-center shrink-0">
                   <ShieldCheck className="w-5 h-5" />
